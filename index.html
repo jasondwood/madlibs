@@ -9,19 +9,24 @@
 		<title>Mad Libs</title>
 
 		<!-- external CSS link -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<header>
-			<h1 class="title">Mad Libs Madness</h1>
-			<p class="description"><strong>Let's play Mad Libs!</strong> You are going to be prompted to enter different types of words & numbers to create a nonsensical story!
-			</p>
-		</header>
+		<div class="container">
+			<header>
+				<h1 class="title">Mad Libs Madness</h1>
+				<p class="description"><strong>Let's play Mad Libs!</strong> You are going to be prompted to enter different types of words & numbers to create a nonsensical story!
+				</p>
+			</header>
+		</div>	
 		
 		<main>
-			<form id="madlibs-form" name="madlibs-form">
-				<section id="madlibs-inputs"></section>
+			<form id="madlibs-form" name="madlibs-form" onsubmit="submitMadLibs(event)">
+				<section id="madlibs-inputs">
 
 				<div class="input-group">
 					<label for="adjective_1">adjective (feeling)</label>
@@ -112,12 +117,14 @@
 					<label for="silly">silly word</label>
 					<input type="text" id="silly" name="silly" required>
 				</div>
+			</section>
+				<section id="madlibs-submit">
+					<button type="submit">Go</button>
+				</section>
 
-				<section id="madlibs-submit"></section>
 			</form>
-		</main>
 
-		
+		</main>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
