@@ -9,123 +9,56 @@
 		<title>Mad Libs</title>
 
 		<!-- external CSS link -->
+		<!-- CSS only -->
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<h1 class="title">Mad Libs Madness</h1>
+			<header id="intro" class="center">
+				<h1 class="title">Mad Libs</h1>
 				<p class="description"><strong>Let's play Mad Libs!</strong> You are going to be prompted to enter different types of words & numbers to create a nonsensical story!
 				</p>
-			</header>
-		</div>	
-		
+			</header>	
 		<main>
-			<form id="madlibs-form" name="madlibs-form" onsubmit="submitMadLibs(event)">
-				<section id="madlibs-inputs">
-
-				<div class="input-group">
-					<label for="adjective_1">adjective (feeling)</label>
-					<input type="text" id="adjective_1" name="adjective_1" required>
+			<div class="container">
+				<div class="row">
+					<input type="text" placeholder="Proper Noun" id="propernoun" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Noun" id="noun1" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Adjective (feeling)" id="adjective1" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Verb" id="verb1" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Adjective (feeling)" id="adjective2" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Animal" id="animal1" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Verb" id="verb2" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Color" id="color1" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Verb (ing)" id="verb3" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Adverb (ly)" id="adverb" class="input-text col-sm-3 p-2 m-2">
+					<input type="text" placeholder="Number" id="number1" class="input-text col-sm-3 p-2 m-2">
+					<input type="text" placeholder="Measure of Time" id="time" class="input-text col-sm-3 p-2 m-2">
+					<input type="text" placeholder="Color" id="color2" class="input-text col-sm-3 p-2 m-2">
+					<input type="text" placeholder="Animal" id="animal2" class="input-text col-sm-3 p-2 m-2">
+					<input type="text" placeholder="Number" id="number2" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Silly Word" id="silly" class="input-text col-sm-3 p-2 m-2"> 
+					<input type="text" placeholder="Noun" id="noun2" class="input-text col-sm-3 p-2 m-2">
 				</div>
-
-				<div class="input-group">
-					<label for="number_1">number</label>
-					<input type="text" id="number_1" name="number_1" required>
+				<div class="row d-flex justify-content-center mt-5">
+					<button onclick="writestory()">Submit</button> 
+					<!-- class="submit col-sm-2 p-3  -->
 				</div>
-
-				<div class="input-group">
-					<label for="proper-noun">proper noun</label>
-					<input type="text" id="proper-noun" name="proper-noun" required>
-				</div>
-
-				<div class="input-group">
-					<label for="noun_1">noun</label>
-					<input type="text" id="noun_1" name="noun_1" required>
-				</div>
-
-				<div class="input-group">
-					<label for="noun_2">noun</label>
-					<input type="text" id="noun_2" name="noun_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="adjective_2">adjective (feeling)</label>
-					<input type="text" id="adjective_2" name="adjective_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="number_2">number</label>
-					<input type="text" id="number_2" name="number_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="verb_1">verb</label>
-					<input type="text" id="verb_1" name="verb_1" required>
-				</div>
-
-				<div class="input-group">
-					<label for="animal_1">animal</label>
-					<input type="text" id="animal_1" name="animal_1" required>
-				</div>
-
-				<div class="input-group">					
-					<label for="animal_2">animal</label>
-					<input type="text" id="animal_2" name="animal_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="verb_2">verb</label>
-					<input type="text" id="verb_2" name="verb_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="verb_3">verb (ing)</label>
-					<input type="text" id="verb_3" name="verb_3" required>
-				</div>
-
-				<div class="input-group">
-					<label for="color_1">color</label>
-					<input type="text" id="color_1" name="color_1" required>
-				</div>
-
-				<div class="input-group">
-					<label for="color_2">color</label>
-					<input type="text" id="color_2" name="color_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="number_2">number</label>
-					<input type="text" id="number_2" name="number_2" required>
-				</div>
-
-				<div class="input-group">
-					<label for="adverb">adverb (ly)</label>
-					<input type="text" id="adverb" name="adverb" required>
-				</div>
-
-				<div class="input-group">
-					<label for="time">measure of time</label>
-					<input type="text" id="time" name="time" required>
-				</div>
-
-				<div class="input-group">
-					<label for="silly">silly word</label>
-					<input type="text" id="silly" name="silly" required>
-				</div>
-			</section>
-				<section id="madlibs-submit">
-					<button type="submit">Go</button>
-				</section>
-
-			</form>
-
+				<p id="storyarea"></p>
+				
+			</div>
 		</main>
-
+	</div>	
+	<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
+
